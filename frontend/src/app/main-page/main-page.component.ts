@@ -13,7 +13,7 @@ export class MainPageComponent{
 
   openLoginDialog(): void {
     const dialogRef = this.dialog.open(LoginDialogComponent, {
-      width: '250px',
+      width: '40vw',
       data: 'Hello',
     });
 

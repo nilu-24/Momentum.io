@@ -1,0 +1,50 @@
+.container{
+  font-family: Clicker;
+  text-align: center;
+
+  .dialog-title{
+    font-size: 2.5rem;
+    font-family: Clicker;
+    margin-bottom: 1.5rem;
+  }
+
+  mat-dialog-content{
+    display: flex;
+    flex-direction: column;
+
+    input{
+      font-family: Clicker;
+      margin-bottom: 1.5rem;
+      border: none;
+      border-bottom: 1px solid #ddd;
+      font-size: 1.5rem;
+    }
+
+    input:focus{
+      outline: none;
+    }
+  }
+
+  mat-dialog-actions{
+    display: flex;
+    justify-content: space-between;
+
+    ::ng-deep .mat-button{
+      font-family: Clicker;
+      color: white;
+      background-color: #004369;
+      width: 40%;
+      text-align: center;
+    }
+
+    ::ng-deep .mat-button:disabled{
+      background-color: #e5e5e5;
+    }
+  }
+
+  .register, .login{
+    color: #6a994e;
+    margin: 1rem 0;
+    cursor: pointer;
+  }
+}

@@ -1,1 +1,35 @@
-<h3 mat-dialog-title>Hello</h3>
+
+<div *ngIf="!registerToggle" class="container">
+  <div mat-dialog-title class="dialog-title">Login</div>
+
+  <mat-dialog-content [formGroup]="loginForm">
+    <input mat-input placeholder="Email" formControlName="email">
+    <input mat-input placeholder="Password" formControlName="password">
+
+    <span class="register" (click)="registerNow()">New here? Register Now!</span>
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-button class="medium-button" (click)="close()">Close</button>
+    <button mat-button class="medium-button" [disabled]="loginForm.invalid" (click)="login()">Login</button>
+  </mat-dialog-actions>
+</div>
+
+
+<div *ngIf="registerToggle" class="container">
+  <div mat-dialog-title class="dialog-title">Register</div>
+
+  <mat-dialog-content [formGroup]="registerForm">
+    <input mat-input placeholder="Username" formControlName="username">
+    <input mat-input placeholder="Email" formControlName="email">
+    <input mat-input placeholder="Password" formControlName="password">
+    <input mat-input placeholder="Country" formControlName="country">
+
+    <span class="login" (click)="loginNow()">Already have an account? Login here!</span>
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-button class="medium-button" (click)="close()">Close</button>
+    <button mat-button class="medium-button" [disabled]="registerForm.invalid" (click)="register()">Register</button>
+  </mat-dialog-actions>
+</div>
