@@ -7,8 +7,8 @@ headers = {"Authorization": f"Bearer {API_KEY}"}
 def query(payload):
 	response = requests.post(API_URL, headers=headers, json=payload)
 	return response.json()
-	
-text = "Let's fucking do this!"
+#input text	
+text = "This is a great initiative!"
 
 output = query({
 	"inputs": text,
