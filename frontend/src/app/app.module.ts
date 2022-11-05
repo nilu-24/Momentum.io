@@ -11,12 +11,19 @@ import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import {MatIconModule} from '@angular/material/icon';
+import { HighchartsChartModule } from 'highcharts-angular';
+import { MapComponent } from './map/map.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MainPageComponent,
-    LoginDialogComponent
+    LoginDialogComponent,
+    LandingPageComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +35,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
+    MatIconModule,
+    HighchartsChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

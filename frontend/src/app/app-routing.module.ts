@@ -1,10 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 import { MainPageComponent } from './main-page/main-page.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'app', pathMatch: 'full'},
-  {path: 'app', component: MainPageComponent}
+  {path: '', redirectTo: 'index', pathMatch: 'full'},
+  {path: 'index', component: MainPageComponent},
+  {
+    path: 'app',
+    component: LandingPageComponent,
+    children: [
+
+    ]
+  },
+
 ];
 
 @NgModule({
