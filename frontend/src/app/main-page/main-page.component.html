@@ -1,0 +1,45 @@
+<mat-toolbar>
+  <div class="toolbar-item logo-container">
+    <img src="../assets/logo.png" class="logo" alt="logo">
+  </div>
+  <div class="toolbar-item brand">
+    weShare
+  </div>
+  <span class="example-spacer"></span>
+  <div class="toolbar-item" (click)="openLoginDialog()">Collaborate</div>
+</mat-toolbar>
+<div class="container">
+  <div class="main-description section">
+    Collaborate on
+    <div class="big-word">Ideas</div>
+    and share the
+    <div class="big-word">Challenges</div>
+    you face in your communities.
+    <div class="big-word">weShare</div>
+    serves in connecting you to the Sustainability Goals of the
+    <div class="big-word">UN</div>
+  </div>
+
+  <div class="make-impact section">
+    <div class="title subsection-left">MAKE AN IMPACT</div>
+    <div class="description subsection-right">
+      Share the challenges you face in your community or region OR if you have ideas on achieving social wellbeing. We value your ideas and weShare will work on them to make a better world. <br><br>
+      Contribute towards better and sustainable future and help next generations live a better life.
+    </div>
+  </div>
+
+  <div class="drop-points section">
+    <div class="description subsection-left">Earn drops for each post, comment you make and also on the momentum your post gets. We will donate $1 for every 10 points you redeem to a cause. Contribute | Earn Drops | Make Change</div>
+    <div class="title subsection-right">
+      <svg viewbox="0 0 50 42">
+        <path class="tear"
+              d="M15 6
+                 Q 15 6, 25 18
+                 A 12.8 12.8 0 1 1 5 18
+                 Q 15 6 15 6z" />
+      </svg>
+    </div>
+  </div>
+
+  <button mat-button (click)="openLoginDialog()">Join Now</button>
+</div>

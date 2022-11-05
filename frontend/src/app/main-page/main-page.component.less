@@ -1,0 +1,115 @@
+.container{
+  font-family: Clicker;
+  text-align: center;
+  margin: 0 10vw;
+
+  .section{
+    border-bottom: 1px solid #dddd;
+    border-left: 1px solid #dddd;
+    padding: 27vh;
+
+    .subsection-left{
+      padding-right: 5vw;
+      border-right: 1px solid #ddd;
+      height: inherit;
+      text-align: right;
+    }
+
+    .subsection-right{
+      padding-left: 5vw;
+      height: inherit;
+      text-align: left;
+    }
+  }
+
+  .main-description{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 2rem;
+    justify-content: space-around;
+    text-align: justify;
+
+    .big-word{
+      font-size: 3rem;
+      position: relative;
+      bottom: 1rem;
+      margin: 0 0.75rem
+    }
+  }
+
+  .make-impact{
+    display: flex;
+
+    .title{
+      font-size: 4rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .description{
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .drop-points{
+    display: flex;
+
+    .title{
+      width: 10%;
+      display: flex;
+      align-items: center;
+
+      svg{
+        margin-top: 12vh;
+      }
+
+      .tear {
+        fill: #289dd2;
+        stroke: #289dd2;
+        stroke-width: 2PX;
+        transform-origin: center center;
+      }
+    }
+
+    .description{
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  ::ng-deep .mat-button{
+    color: white;
+    background-color: #004369;
+    width: 20vw;
+    font-size: 2rem;
+    height: 8vh;
+    text-align: center;
+    margin: 5vh 0;
+  }
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar{
+  color: white;
+  background-color: #004369;
+  height: 10vh;
+  font-family: Clicker;
+  font-size: 1.5rem;
+
+  .brand{
+    font-family: Roboto;
+    font-size: 2.5rem;
+  }
+
+  .logo{
+    height: 7.5vh;
+  }
+
+  .toolbar-item {
+    cursor: pointer;
+  }
+}
