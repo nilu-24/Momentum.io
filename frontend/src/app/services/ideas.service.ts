@@ -11,7 +11,7 @@ const mockIdeas : IPost[] = [
   {
     id: 1,
     username: 'Fardin',
-    title: 'Car Pooling',
+    title: 'Idea1',
     description: 'Car poolings help to save environment',
     tags: 'environment, cleanEnergy, fossil',
     country: 'bn',
@@ -22,7 +22,7 @@ const mockIdeas : IPost[] = [
   {
     id: 1,
     username: 'Piyush',
-    title: 'Blood Donation',
+    title: 'Idea2',
     description: 'Blood Donation help to save people',
     tags: 'blood, donation, health',
     country: 'in',

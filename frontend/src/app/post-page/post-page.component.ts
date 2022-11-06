@@ -25,13 +25,7 @@ export class PostPageComponent implements OnInit {
       private readonly route: ActivatedRoute,
       private readonly router: Router
     ) {
-
-    if(this.isChallenge){
-      this.trending =  this.challengesService.getTrendingChallenges();
-    } else{
-      this.trending = this.ideasService.getTrendingIdeas();
-    }
-    this.user = this.userService.getCurrentUser();
+      this.route.data.subscribe(result => this.isChallenge = result['isChallenge'])
   }
 
   navigateToChallenges(){
@@ -42,6 +36,13 @@ export class PostPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.data.subscribe(result => this.isChallenge = result['isChallenge'])
+
+    if(this.isChallenge){
+      this.trending =  this.challengesService.getTrendingChallenges();
+    }
+    else if(!this.isChallenge) {
+      this.trending = this.ideasService.getTrendingIdeas();
+    }
+    this.user = this.userService.getCurrentUser();
   }
 }

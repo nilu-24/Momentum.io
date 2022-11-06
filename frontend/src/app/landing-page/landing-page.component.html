@@ -33,8 +33,8 @@
 
     <div class="trendingIdeas trend">
       <div class="title">Trending Ideas</div>
-      <div *ngFor="let challenge of trendingChallenges">
-        <app-trending-card [post]="challenge"></app-trending-card>
+      <div *ngFor="let idea of trendingIdeas">
+        <app-trending-card [post]="idea"></app-trending-card>
       </div>
       <button mat-button class="medium-button">Have an Idea?</button>
     </div>
