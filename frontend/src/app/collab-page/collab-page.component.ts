@@ -1,30 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IPost } from '../interfaces/post.interface';
 import { IUser } from '../interfaces/user.interface';
-import { ChallengesService } from '../services/challenges.service';
-import { IdeasService } from '../services/ideas.service';
+import { CollabService } from '../services/collab.service';
 import { UserService } from '../services/user.service';
 
 @Component({
-  selector: 'app-landing-page',
-  templateUrl: './landing-page.component.html',
-  styleUrls: ['./landing-page.component.less']
+  selector: 'app-collab-page',
+  templateUrl: './collab-page.component.html',
+  styleUrls: ['./collab-page.component.less']
 })
-export class LandingPageComponent implements OnInit {
-
-  trendingChallenges: IPost[] = [];
-  trendingIdeas: IPost[] = [];
+export class CollabPageComponent implements OnInit {
   user: IUser | undefined;
+  post: IPost | undefined;
+
+  state: any;
+
+  messages = ['Farhan: Message by user 1', 'Ibrahim: Message by user 2'];
+  newMessage = '';
 
   constructor(private readonly router: Router,
     private readonly userService: UserService,
-    private readonly challengesService : ChallengesService,
-    private readonly ideasService : IdeasService
+    private readonly collabService: CollabService,
     ) {
-    this.trendingChallenges = this.challengesService.getTrendingChallenges().splice(0, 3);
-    this.trendingIdeas = this.ideasService.getTrendingIdeas().splice(0, 3);
     this.user = this.userService.getCurrentUser();
+    this.post = this.collabService.getCollabPost();
   }
 
   ngOnInit(): void {
@@ -48,6 +48,11 @@ export class LandingPageComponent implements OnInit {
     .then(() => {
       window.location.reload()
     });
+  }
+
+  sendMessage(){
+    this.messages.push(this.user?.username + ': ' + this.newMessage);
+    this.newMessage = '';
   }
 
 }

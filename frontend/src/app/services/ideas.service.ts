@@ -17,6 +17,7 @@ const mockIdeas : IPost[] = [
     country: 'bn',
     flag: false,
     votes: 250,
+    imageurl: '../../assets/images/world.png',
     un_tag: 7
   },
   {
@@ -28,6 +29,7 @@ const mockIdeas : IPost[] = [
     country: 'in',
     flag: false,
     votes: 150,
+    imageurl: '../../assets/images/world.png',
     un_tag: 9
   },
   {
@@ -39,6 +41,7 @@ const mockIdeas : IPost[] = [
     country: 'au',
     flag: false,
     votes: 100,
+    imageurl: '../../assets/images/world.png',
     un_tag: 2
   },
 ]

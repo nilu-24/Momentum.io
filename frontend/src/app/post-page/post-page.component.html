@@ -3,7 +3,7 @@
     <img src="../assets/logo.png" class="logo" alt="logo">
   </div>
   <div class="toolbar-item brand">
-    weShare
+    momentum.io
   </div>
   <span class="example-spacer"></span>
   <div class="toolbar-item ti-right points">
@@ -14,7 +14,7 @@
   </div>
   <div class="toolbar-item ti-right" [ngClass]="{'highlight' : isChallenge}" (click)="navigateToChallenges()" >Challenges</div>
   <div class="toolbar-item ti-right" [ngClass]="{'highlight' : !isChallenge}"  (click)="navigateToIdeas()">Ideas</div>
-  <div class="toolbar-item ti-right" ><mat-icon>logout</mat-icon>Logout</div>
+  <div class="toolbar-item ti-right" (click)="logout()"><mat-icon>logout</mat-icon>Logout</div>
 </mat-toolbar>
 
 <div class="container">

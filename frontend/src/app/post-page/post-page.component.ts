@@ -51,4 +51,11 @@ export class PostPageComponent implements OnInit {
     }
     this.user = this.userService.getCurrentUser();
   }
+
+  logout(){
+    this.router.navigate([''])
+    .then(() => {
+      window.location.reload()
+    });
+  }
 }

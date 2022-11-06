@@ -3,7 +3,7 @@
     <img src="../assets/logo.png" class="logo" alt="logo">
   </div>
   <div class="toolbar-item brand">
-    weShare
+    momentum.io
   </div>
   <span class="example-spacer"></span>
   <div class="toolbar-item ti-right points">
@@ -14,7 +14,7 @@
   </div>
   <div class="toolbar-item ti-right" (click)="navigateToChallenges()">Challenges</div>
   <div class="toolbar-item ti-right" (click)="navigateToIdeas()">Ideas</div>
-  <div class="toolbar-item ti-right" ><mat-icon>logout</mat-icon>Logout</div>
+  <div class="toolbar-item ti-right" (click)="logout()"><mat-icon>logout</mat-icon>Logout</div>
 </mat-toolbar>
 <div class="container">
   <div class="map">
@@ -28,7 +28,7 @@
         <app-trending-card [post]="challenge"></app-trending-card>
       </div>
 
-      <button mat-button class="medium-button">Facing a Challenge?</button>
+      <button mat-button class="medium-button" (click)="navigateToChallenges()">Facing a Challenge?</button>
     </div>
 
     <div class="trendingIdeas trend">
@@ -36,7 +36,7 @@
       <div *ngFor="let idea of trendingIdeas">
         <app-trending-card [post]="idea"></app-trending-card>
       </div>
-      <button mat-button class="medium-button">Have an Idea?</button>
+      <button mat-button class="medium-button" (click)="navigateToIdeas()">Have an Idea?</button>
     </div>
   </div>
 </div>

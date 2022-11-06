@@ -16,6 +16,6 @@
 
   <div class="image-button">
     <input type="file" class="image-input" formControlName="image">
-    <button mat-button class="medium-button" (click)="createNewPost()">POST</button>
+    <button mat-button class="medium-button" (click)="createNewPost()" [disabled]="postForm.invalid">POST</button>
   </div>
 </mat-card>

@@ -1,0 +1,53 @@
+<mat-toolbar>
+  <div class="toolbar-item logo-container">
+    <img src="../assets/logo.png" class="logo" alt="logo" />
+  </div>
+  <div class="toolbar-item brand">momentum.io</div>
+  <span class="example-spacer"></span>
+  <div class="toolbar-item ti-right points">
+    <img class="tear-icon" src="../../assets/tear.png" alt="" />
+    <div *ngIf="user">
+      <div class="toolbar-item ti-right">{{ user.drops }}</div>
+    </div>
+  </div>
+  <div class="toolbar-item ti-right" (click)="navigateToChallenges()">
+    Challenges
+  </div>
+  <div class="toolbar-item ti-right" (click)="navigateToIdeas()">Ideas</div>
+  <div class="toolbar-item ti-right" (click)="logout()">
+    <mat-icon>logout</mat-icon>Logout
+  </div>
+</mat-toolbar>
+
+<div class="container">
+  <div class="post" *ngIf="post">
+    <mat-card>
+      <div class="info">
+        <div class="title">{{ post.title }}</div>
+
+        <div class="description">{{ post.description }}</div>
+
+        <div class="tags">{{ post.tags }}</div>
+
+        <div class="country">{{ post.country }}</div>
+      </div>
+
+      <div class="post-image">
+        <img alt="post image" [attr.src]="post.imageurl" />
+      </div>
+    </mat-card>
+  </div>
+
+  <div class="messages">
+    <div class="message" *ngFor="let m of messages">{{ m }}</div>
+    <div class="input">
+      <input
+        type="text"
+        mat-input
+        placeholder="Type Your Message"
+        [(ngModel)]="newMessage"
+      />
+      <button mat-button class="send-button" (click)="sendMessage()">Send</button>
+    </div>
+  </div>
+</div>

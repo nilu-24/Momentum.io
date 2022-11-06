@@ -3,22 +3,39 @@
     <img src="../assets/logo.png" class="logo" alt="logo">
   </div>
   <div class="toolbar-item brand">
-    weShare
+    momentum.io
   </div>
   <span class="example-spacer"></span>
-  <div class="toolbar-item" (click)="openLoginDialog()">Collaborate</div>
+  <div style="
+  border: 2px solid white;
+  padding: 8px;
+  border-radius: 10px;
+  " class="toolbar-item" (click)="openLoginDialog()">Collaborate</div>
 </mat-toolbar>
+
+<img style= "height: 400px; width: 400px;
+display: block;
+margin-left:auto;
+margin-right: auto;" src="../assets/world.png" class="banner" alt="main">
+
 <div class="container">
+
   <div class="main-description section">
     Collaborate on
     <div class="big-word">Ideas</div>
     and share the
     <div class="big-word">Challenges</div>
     you face in your communities.
-    <div class="big-word">weShare</div>
+    <div class="big-word">momentum</div>
     serves in connecting you to the Sustainability Goals of the
-    <div class="big-word">UN</div>
+    <div class="big-word">United Nations 🇺🇳</div>
+
+    <button mat-button (click)="openLoginDialog()"> Join the family! </button>
   </div>
+
+
+  <h1>The World At A Glance 🌎</h1>
+  <h4>Discover the challenges with the most momentum ⚡ all across the globe with our fully interactive map.</h4>
 
   <div class="map section">
     <map></map>
@@ -27,7 +44,7 @@
   <div class="make-impact section">
     <div class="title subsection-left">MAKE AN IMPACT</div>
     <div class="description subsection-right">
-      Share the challenges you face in your community or region OR if you have ideas on achieving social wellbeing. We value your ideas and weShare will work on them to make a better world. <br><br>
+      Share the challenges you face in your community or region OR if you have ideas on achieving social wellbeing. We value your ideas and momentum.io will work on them to make a better world. <br><br>
       Contribute towards better and sustainable future and help next generations live a better life.
     </div>
   </div>
@@ -39,5 +56,14 @@
     </div>
   </div>
 
-  <button mat-button (click)="openLoginDialog()">Join Now</button>
+
+  <h3>You can bring a change. Make every moment count!</h3>
+
+  <button mat-button (click)="openLoginDialog()">Join Us Now!</button>
+
+  <h4>Made with ❤️ by Team Momentum.</h4>
+  <br>
+
 </div>
+
+

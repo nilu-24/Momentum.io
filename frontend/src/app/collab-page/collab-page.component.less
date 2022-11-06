@@ -1,0 +1,127 @@
+
+@font-face {
+  font-family: Clicker;
+  src: url("../../assets/fonts/Clicker/Clicker.ttf") format("truetype");
+}
+
+.example-spacer {
+  flex: 1 3 auto;
+}
+
+.mat-toolbar{
+  color: white;
+  background-color: #004369;
+  height: 10vh;
+  font-family: Clicker;
+  font-size: 1.5rem;
+
+  .brand{
+    font-family: Roboto;
+    font-size: 2.5rem;
+  }
+
+  .logo{
+    height: 7.5vh;
+  }
+
+  .toolbar-item {
+    cursor: pointer;
+  }
+}
+
+.ti-right{
+  margin: 0 1rem;
+}
+
+.tear-icon{
+  width: 1.25rem;
+  margin: 0 0.75rem 0 0;
+}
+
+.points{
+  display: flex;
+}
+
+
+.container{
+  margin:  5vh 10vw;
+
+  .post{
+    .mat-card{
+      font-family: Clicker;
+      display: flex;
+      justify-content: space-between;
+
+      .info{
+        width: 90%;
+      }
+    }
+
+    .title{
+      font-size: 2rem;
+      margin: 0 0 3vh 0;
+      text-transform: uppercase;
+    }
+
+    .description{
+      margin: 3vh 0;
+      text-transform: capitalize;
+    }
+
+    .tags{
+      margin: 3vh 0;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .post-image{
+      img{
+        width: 13vw;
+      }
+    }
+  }
+
+  .messages{
+    font-family: Clicker;
+    background-color: aliceblue;
+    height: 52vh;
+    margin: 2vh 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+
+    .message{
+      margin: 1vh;
+      font-weight: 200;
+    }
+
+    .input{
+      display: flex;
+    }
+
+    input{
+      height: 4vh;
+      width: 100%;
+      border:none;
+      border-left: 1px solid #ddd;
+      border-bottom: 1px solid #ddd
+    }
+
+    input:focus{
+      border: none;
+    }
+  }
+
+  ::ng-deep .mat-button{
+    color: white;
+    background-color: #004369;
+    font-size: 1rem;
+    height: 4vh;
+    text-align: center;
+  }
+
+
+
+}

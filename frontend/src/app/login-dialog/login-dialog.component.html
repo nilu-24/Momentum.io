@@ -4,7 +4,7 @@
 
   <mat-dialog-content [formGroup]="loginForm">
     <input mat-input placeholder="Email" formControlName="email">
-    <input mat-input placeholder="Password" formControlName="password">
+    <input mat-input placeholder="Password" type="password" formControlName="password">
 
     <span class="register" (click)="registerNow()">New here? Register Now!</span>
   </mat-dialog-content>
@@ -22,7 +22,7 @@
   <mat-dialog-content [formGroup]="registerForm">
     <input mat-input placeholder="Username" formControlName="username">
     <input mat-input placeholder="Email" formControlName="email">
-    <input mat-input placeholder="Password" formControlName="password">
+    <input mat-input placeholder="Password" type="password" formControlName="password">
     <input mat-input placeholder="Country" formControlName="country">
 
     <span class="login" (click)="loginNow()">Already have an account? Login here!</span>

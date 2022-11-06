@@ -8,4 +8,5 @@ export interface IPost{
   flag: boolean,
   votes: number
   un_tag: number,
+  imageurl: string,
 }

@@ -1,7 +1,7 @@
 .container{
   font-family: Clicker;
   text-align: center;
-  margin: 0 10vw;
+  margin: 0 5%;
 
   .map{
     height: 75vh;
@@ -10,10 +10,12 @@
   .section{
     border-bottom: 1px solid #dddd;
     border-left: 1px solid #dddd;
-    padding: 27vh;
+    padding-top: 5vh;
+    padding-bottom: 12vh;
 
     .subsection-left{
       padding-right: 5vw;
+      padding-left: 5vw;
       border-right: 1px solid #ddd;
       height: inherit;
       text-align: right;
@@ -21,6 +23,7 @@
 
     .subsection-right{
       padding-left: 5vw;
+      padding-right: 5vw;
       height: inherit;
       text-align: left;
     }
@@ -29,15 +32,32 @@
   .main-description{
     display: flex;
     flex-wrap: wrap;
-    font-size: 2rem;
+    font-size: 2.2rem;
     justify-content: space-around;
     text-align: justify;
 
     .big-word{
       font-size: 3rem;
       position: relative;
-      bottom: 1rem;
-      margin: 0 0.75rem
+      bottom: 0.2rem;
+      margin: 0 0.15rem
+    }
+  }
+
+  @media screen and (max-width: 600px){
+    .main-description{
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 1.2rem;
+      justify-content: space-around;
+      text-align: justify;
+
+      .big-word{
+        font-size: 2rem;
+        position: relative;
+        bottom: 0.2rem;
+        margin: 0 0.15rem
+      }
     }
   }
 
@@ -78,10 +98,10 @@
   ::ng-deep .mat-button{
     color: white;
     background-color: #004369;
-    width: 20vw;
     font-size: 2rem;
     height: 8vh;
     text-align: center;
+    font-family: Clicker;
     margin: 5vh 0;
   }
 }

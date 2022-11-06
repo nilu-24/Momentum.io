@@ -23,6 +23,7 @@ import { TrendingCardComponent } from './trending-card/trending-card.component';
 import { PostPageComponent } from './post-page/post-page.component';
 import { TrendingPostComponent } from './trending-post/trending-post.component';
 import { PostCardComponent } from './post-card/post-card.component';
+import { CollabPageComponent } from './collab-page/collab-page.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { PostCardComponent } from './post-card/post-card.component';
     PostPageComponent,
     TrendingPostComponent,
     PostCardComponent,
+    CollabPageComponent,
   ],
   imports: [
     BrowserModule,

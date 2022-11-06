@@ -16,6 +16,7 @@
   </div>
 
   <div class="collab">
-    <button mat-button class="medium-button">Collaborate</button>
+    <button mat-button class="medium-button btn-collab" (click)="collab()">Collaborate</button>
+    <button mat-button class="medium-button btn-vote" [ngClass]="{'voted' : voted}" (click)="upvote(post.id)"><img src="../../assets/zapp.png" alt="" class="zapp" /></button>
   </div>
 </mat-card>

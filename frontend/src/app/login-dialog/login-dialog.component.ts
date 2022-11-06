@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, UntypedFormControl, Validators } from "@angular/forms";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'login-dialog',
@@ -15,7 +16,8 @@ export class LoginDialogComponent implements OnInit{
 
   constructor(
     private fb : FormBuilder,
-    private dialogRef: MatDialogRef<LoginDialogComponent>
+    private dialogRef: MatDialogRef<LoginDialogComponent>,
+    private router: Router
   ) {
 
     this.loginForm = this.fb.group({
@@ -67,7 +69,10 @@ export class LoginDialogComponent implements OnInit{
   }
 
   login(): void {
-    this.dialogRef.close(this.loginForm.value);
+    this.router.navigate(['app'])
+    .then(() => {
+      window.location.reload()
+    });
   }
 
   register(): void {
