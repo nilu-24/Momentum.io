@@ -44,6 +44,8 @@ export class CollabPageComponent implements OnInit {
   }
 
   logout(){
+    sessionStorage.clear();
+
     this.router.navigate([''])
     .then(() => {
       window.location.reload()

@@ -2,8 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IPost } from '../interfaces/post.interface';
 import { IUser } from '../interfaces/user.interface';
-import { ChallengesService } from '../services/challenges.service';
-import { IdeasService } from '../services/ideas.service';
+import { PostService } from '../services/posts.service';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -20,8 +19,7 @@ export class PostPageComponent implements OnInit {
 
   constructor(
       private readonly userService: UserService,
-      private readonly challengesService : ChallengesService,
-      private readonly ideasService: IdeasService,
+      private readonly postService: PostService,
       private readonly route: ActivatedRoute,
       private readonly router: Router
     ) {
@@ -44,15 +42,17 @@ export class PostPageComponent implements OnInit {
   ngOnInit(): void {
 
     if(this.isChallenge){
-      this.trending =  this.challengesService.getTrendingChallenges();
+      this.trending =  this.postService.getTrendingChallenges();
     }
     else if(!this.isChallenge) {
-      this.trending = this.ideasService.getTrendingIdeas();
+      this.trending = this.postService.getTrendingIdeas();
     }
     this.user = this.userService.getCurrentUser();
   }
 
   logout(){
+    sessionStorage.clear();
+
     this.router.navigate([''])
     .then(() => {
       window.location.reload()

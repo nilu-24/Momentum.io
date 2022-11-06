@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IPost } from '../interfaces/post.interface';
 import { IUser } from '../interfaces/user.interface';
-import { ChallengesService } from '../services/challenges.service';
-import { IdeasService } from '../services/ideas.service';
+import { PostService } from '../services/posts.service';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -19,11 +18,10 @@ export class LandingPageComponent implements OnInit {
 
   constructor(private readonly router: Router,
     private readonly userService: UserService,
-    private readonly challengesService : ChallengesService,
-    private readonly ideasService : IdeasService
+    private readonly postService : PostService
     ) {
-    this.trendingChallenges = this.challengesService.getTrendingChallenges().splice(0, 3);
-    this.trendingIdeas = this.ideasService.getTrendingIdeas().splice(0, 3);
+    this.trendingChallenges = this.postService.getTrendingChallenges().splice(0, 3);
+    this.trendingIdeas = this.postService.getTrendingIdeas().splice(0, 3);
     this.user = this.userService.getCurrentUser();
   }
 
@@ -44,6 +42,8 @@ export class LandingPageComponent implements OnInit {
   }
 
   logout(){
+    sessionStorage.clear();
+
     this.router.navigate([''])
     .then(() => {
       window.location.reload()

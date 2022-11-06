@@ -17,13 +17,14 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { MapComponent } from './map/map.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { UserService } from './services/user.service';
-import { ChallengesService } from './services/challenges.service';
 import {MatCardModule} from '@angular/material/card';
 import { TrendingCardComponent } from './trending-card/trending-card.component';
 import { PostPageComponent } from './post-page/post-page.component';
 import { TrendingPostComponent } from './trending-post/trending-post.component';
 import { PostCardComponent } from './post-card/post-card.component';
 import { CollabPageComponent } from './collab-page/collab-page.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
+import { PostService } from './services/posts.service';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { CollabPageComponent } from './collab-page/collab-page.component';
     TrendingPostComponent,
     PostCardComponent,
     CollabPageComponent,
+    AdminPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +55,7 @@ import { CollabPageComponent } from './collab-page/collab-page.component';
     HighchartsChartModule,
     MatCardModule,
   ],
-  providers: [UserService, ChallengesService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [UserService , PostService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

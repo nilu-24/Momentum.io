@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, UntypedFormControl, Validators } from "@angular/forms";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { Router } from "@angular/router";
+import { UserService } from "../services/user.service";
 
 @Component({
   selector: 'login-dialog',
@@ -17,6 +18,7 @@ export class LoginDialogComponent implements OnInit{
   constructor(
     private fb : FormBuilder,
     private dialogRef: MatDialogRef<LoginDialogComponent>,
+    private userService:UserService,
     private router: Router
   ) {
 
@@ -69,10 +71,17 @@ export class LoginDialogComponent implements OnInit{
   }
 
   login(): void {
-    this.router.navigate(['app'])
-    .then(() => {
-      window.location.reload()
-    });
+
+    const user = this.userService.verifyUser(this.loginForm.value.email, this.loginForm.value.password);
+
+    if(user){
+      sessionStorage.setItem("user", user.email);
+
+      this.router.navigate(['app'])
+      .then(() => {
+        window.location.reload()
+      });
+    }
   }
 
   register(): void {

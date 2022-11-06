@@ -2,44 +2,43 @@ import { IUser } from "../interfaces/user.interface";
 
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { catchError, Observable, throwError } from 'rxjs';
-import { environment } from 'src/environments/environment.prod';
 
-const mockUserData : IUser = {
-  id: 1,
-  username: 'Piyush Goyal',
-  email: 'piyushg944@gmail.com',
-  password: '#1234Bes',
-  country: 'Canada',
-  drops: 145
-}
+let users : IUser[] = [
+  {
+    id: 1,
+    username: 'Piyush Goyal',
+    email: 'piyushg944@gmail.com',
+    password: '#1234Bes',
+    country: 'India',
+    drops: 145
+  },
+  {
+    id: 2,
+    username: 'Ibrahim',
+    email: 'ibrahim@gmail.com',
+    password: '#1234Bes',
+    country: 'Jordan',
+    drops: 300
+  }
+]
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  // constructor(private http: HttpClient, private dialog: MatDialog) {
-  // }
-
   getCurrentUser() : IUser{
-    return mockUserData;
+    var user = users.filter(res => res.email === sessionStorage.getItem("user"));
+    return user[0];
   };
-  // addUser(user: IUser): Observable<IUser>{
-  //   return this.http.post<IUser>(environment.baseurl + '/user', user).pipe(catchError(this.handleError));
-  // }
 
-  // getUsers(): Observable<IUser[]> {
-  //   return this.http.get<IUser[]>(environment.baseurl + '/user');
-  // }
+  verifyUser(email:string, pass: string){
+    var user = users.filter(res => res.email === email && res.password === pass);
 
-  // getUserById(id: number): Observable<IUser>{
-  //   return this.http.get<IUser>(environment.baseurl + `/user/userId=${id}`).pipe(catchError(this.handleError));
-  // }
-
-  // checkForUser(email: string, pin: string): Observable<IUser>{
-  //   return this.http.get<IUser>(environment.baseurl + `/user/email=${email}&pin=${pin}`).pipe(catchError(this.handleError));
-  // }
+    if(user.length > 0){
+      return user[0];
+    }
+    return null;
+  }
 }
 
