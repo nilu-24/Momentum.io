@@ -1,0 +1,13 @@
+<mat-card>
+  <div class="card-content" *ngIf="post">
+    <div class="c-title">{{post.title}}</div>
+    <div class="c-description">{{post.description}}</div>
+    <div class="un-tag-vote">
+      <div class="c-tags">Tags: {{post.tags}}</div>
+      <div class="c-votes">
+        <img class="vote" src="../../assets/tear.png" alt="">
+        {{post.votes}}
+      </div>
+    </div>
+  </div>
+</mat-card>

@@ -7,4 +7,5 @@ export interface IPost{
   country: string,
   flag: boolean,
   votes: number
+  un_tag: number,
 }

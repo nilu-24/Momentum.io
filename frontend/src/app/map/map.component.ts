@@ -28,7 +28,7 @@ export class MapComponent {
       map: worldMap as any
     },
     title: {
-      text: "UN Sustainability and Development Goals"
+      text: "Challenges on the Rise"
     },
     exporting: {
       enabled: true
@@ -306,7 +306,7 @@ export class MapComponent {
           ["dz", 0],
           ["lt", 0],
           ["et", 0],
-          ["er", this.hash['Gender Equality']],
+          ["er", 0],
           ["gh", 0],
           ["si", 0],
           ["gt", 0],

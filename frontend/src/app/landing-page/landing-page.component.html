@@ -8,7 +8,9 @@
   <span class="example-spacer"></span>
   <div class="toolbar-item ti-right points">
     <img class="tear-icon" src="../../assets/tear.png" alt="">
-    <div class="toolbar-item ti-right">100</div>
+    <div *ngIf="user">
+      <div class="toolbar-item ti-right">{{user.drops}}</div>
+    </div>
   </div>
   <div class="toolbar-item ti-right" >Challenges</div>
   <div class="toolbar-item ti-right" >Ideas</div>
@@ -17,5 +19,24 @@
 <div class="container">
   <div class="map">
     <map></map>
+  </div>
+
+  <div class="trends">
+    <div class="trendingChallenges trend">
+      <div class="title">Trending Challenges</div>
+      <div *ngFor="let challenge of trendingChallenges">
+        <app-trending-card [post]="challenge"></app-trending-card>
+      </div>
+
+      <button mat-button class="medium-button">Facing a Challenge?</button>
+    </div>
+
+    <div class="trendingIdeas trend">
+      <div class="title">Trending Ideas</div>
+      <div *ngFor="let challenge of trendingChallenges">
+        <app-trending-card [post]="challenge"></app-trending-card>
+      </div>
+      <button mat-button class="medium-button">Have an Idea?</button>
+    </div>
   </div>
 </div>

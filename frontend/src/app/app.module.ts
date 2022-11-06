@@ -15,6 +15,11 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import {MatIconModule} from '@angular/material/icon';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { MapComponent } from './map/map.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { UserService } from './services/user.service';
+import { ChallengesService } from './services/challenges.service';
+import {MatCardModule} from '@angular/material/card';
+import { TrendingCardComponent } from './trending-card/trending-card.component';
 
 
 @NgModule({
@@ -24,6 +29,7 @@ import { MapComponent } from './map/map.component';
     LoginDialogComponent,
     LandingPageComponent,
     MapComponent,
+    TrendingCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,9 +42,10 @@ import { MapComponent } from './map/map.component';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatIconModule,
-    HighchartsChartModule
+    HighchartsChartModule,
+    MatCardModule,
   ],
-  providers: [],
+  providers: [UserService, ChallengesService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
