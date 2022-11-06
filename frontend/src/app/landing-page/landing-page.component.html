@@ -12,8 +12,8 @@
       <div class="toolbar-item ti-right">{{user.drops}}</div>
     </div>
   </div>
-  <div class="toolbar-item ti-right" >Challenges</div>
-  <div class="toolbar-item ti-right" >Ideas</div>
+  <div class="toolbar-item ti-right" (click)="navigateToChallenges()">Challenges</div>
+  <div class="toolbar-item ti-right" (click)="navigateToIdeas()">Ideas</div>
   <div class="toolbar-item ti-right" ><mat-icon>logout</mat-icon>Logout</div>
 </mat-toolbar>
 <div class="container">

@@ -1,0 +1,21 @@
+<mat-card [formGroup]="postForm">
+  <div class="inputs">
+    <input
+      mat-input
+      type="text"
+      formControlName="title"
+      placeholder="Title"
+      class="i-title"
+    />
+
+    <textarea name="desc" rows="5" placeholder="Description" formControlName="description"></textarea>
+
+    <input type="text" placeholder="Tags (Upto 3)" class="tags" formControlName="tags">
+    <input type="text" placeholder="City" class="city" formControlName="city">
+  </div>
+
+  <div class="image-button">
+    <input type="file" class="image-input" formControlName="image">
+    <button mat-button class="medium-button" (click)="createNewPost()">POST</button>
+  </div>
+</mat-card>

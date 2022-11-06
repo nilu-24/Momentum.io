@@ -20,6 +20,9 @@ import { UserService } from './services/user.service';
 import { ChallengesService } from './services/challenges.service';
 import {MatCardModule} from '@angular/material/card';
 import { TrendingCardComponent } from './trending-card/trending-card.component';
+import { PostPageComponent } from './post-page/post-page.component';
+import { TrendingPostComponent } from './trending-post/trending-post.component';
+import { PostCardComponent } from './post-card/post-card.component';
 
 
 @NgModule({
@@ -30,6 +33,9 @@ import { TrendingCardComponent } from './trending-card/trending-card.component';
     LandingPageComponent,
     MapComponent,
     TrendingCardComponent,
+    PostPageComponent,
+    TrendingPostComponent,
+    PostCardComponent,
   ],
   imports: [
     BrowserModule,

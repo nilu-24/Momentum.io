@@ -1,0 +1,17 @@
+<mat-card *ngIf="post">
+  <div class="username">{{ post.username }}</div>
+  <div class="image">
+    <img src="../../assets/post-image.jpg" alt="post_image" />
+  </div>
+  <div class="title">{{post.title}}</div>
+  <div class="description">{{ post.description }}</div>
+
+  <div class="tag-points">
+    <div class="tags">{{ post.tags }}</div>
+
+    <div class="points">
+      <img src="../../assets/zapp.png" alt="" class="zapp" />
+      <div>{{ post.votes }}</div>
+    </div>
+  </div>
+</mat-card>

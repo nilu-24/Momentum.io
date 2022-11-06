@@ -1,0 +1,38 @@
+<mat-toolbar>
+  <div class="toolbar-item logo-container">
+    <img src="../assets/logo.png" class="logo" alt="logo">
+  </div>
+  <div class="toolbar-item brand">
+    weShare
+  </div>
+  <span class="example-spacer"></span>
+  <div class="toolbar-item ti-right points">
+    <img class="tear-icon" src="../../assets/tear.png" alt="">
+    <div *ngIf="user">
+      <div class="toolbar-item ti-right">{{user.drops}}</div>
+    </div>
+  </div>
+  <div class="toolbar-item ti-right" [ngClass]="{'highlight' : isChallenge}" (click)="navigateToChallenges()" >Challenges</div>
+  <div class="toolbar-item ti-right" [ngClass]="{'highlight' : !isChallenge}"  (click)="navigateToIdeas()">Ideas</div>
+  <div class="toolbar-item ti-right" ><mat-icon>logout</mat-icon>Logout</div>
+</mat-toolbar>
+
+<div class="container">
+
+  <div class="make-post">
+    <div class="title">Make a post</div>
+    <div class="post-card">
+      <app-post-card></app-post-card>
+    </div>
+  </div>
+  <div class="trends">
+    <div class="title" *ngIf="isChallenge">Challenges on the Rise</div>
+    <div class="title" *ngIf="!isChallenge">Trending Ideas</div>
+
+    <div class="trending">
+      <div class="trending-post" *ngFor="let post of trending">
+        <app-trending-post [post]="post"></app-trending-post>
+      </div>
+    </div>
+  </div>
+</div>

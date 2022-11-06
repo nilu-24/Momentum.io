@@ -73,25 +73,5 @@ export class LoginDialogComponent implements OnInit{
   register(): void {
     this.dialogRef.close(this.registerForm.value);
   }
-
-  //Getter Methods
-  get username() {
-    return this.registerForm.get('username') as UntypedFormControl;
-  }
-  get emailLogin() {
-    return this.loginForm.get('email') as UntypedFormControl;
-  }
-  get emailRegister(){
-    return this.registerForm.get('email') as UntypedFormControl;
-  }
-  get passwordLogin() {
-    return this.loginForm.get('password') as UntypedFormControl;
-  }
-  get passwordRegister() {
-    return this.registerForm.get('password') as UntypedFormControl;
-  }
-  get country() {
-    return this.registerForm.get('country') as UntypedFormControl;
-  }
 }
 

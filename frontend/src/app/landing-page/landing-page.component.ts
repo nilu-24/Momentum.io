@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IPost } from '../interfaces/post.interface';
 import { IUser } from '../interfaces/user.interface';
 import { ChallengesService } from '../services/challenges.service';
@@ -14,12 +15,19 @@ export class LandingPageComponent implements OnInit {
   trendingChallenges: IPost[] = [];
   user: IUser | undefined;
 
-  constructor(private readonly userService: UserService, private readonly challengesService : ChallengesService) {
+  constructor(private readonly router: Router, private readonly userService: UserService, private readonly challengesService : ChallengesService) {
     this.trendingChallenges = this.challengesService.getTrendingChallenges().splice(0, 3);
     this.user = this.userService.getCurrentUser();
   }
 
   ngOnInit(): void {
+  }
+
+  navigateToChallenges(){
+    this.router.navigate(['challenges'])
+  }
+  navigateToIdeas(){
+    this.router.navigate(['ideas'])
   }
 
 }
