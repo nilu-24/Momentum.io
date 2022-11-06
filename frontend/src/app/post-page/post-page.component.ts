@@ -30,9 +30,15 @@ export class PostPageComponent implements OnInit {
 
   navigateToChallenges(){
     this.router.navigate(['challenges'])
+    .then(() => {
+      window.location.reload()
+    });
   }
   navigateToIdeas(){
     this.router.navigate(['ideas'])
+    .then(() => {
+      window.location.reload()
+    });
   }
 
   ngOnInit(): void {

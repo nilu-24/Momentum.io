@@ -32,9 +32,15 @@ export class LandingPageComponent implements OnInit {
 
   navigateToChallenges(){
     this.router.navigate(['challenges'])
+    .then(() => {
+      window.location.reload()
+    });
   }
   navigateToIdeas(){
     this.router.navigate(['ideas'])
+    .then(() => {
+      window.location.reload()
+    });
   }
 
 }
