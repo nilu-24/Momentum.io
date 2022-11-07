@@ -26,6 +26,8 @@ import { CollabPageComponent } from './collab-page/collab-page.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { PostService } from './services/posts.service';
 import {MatSelectModule} from '@angular/material/select';
+import { HttpClientModule } from '@angular/common/http';
+import { TranslocoRootModule } from './transloco-root.module';
 
 
 @NgModule({
@@ -56,6 +58,8 @@ import {MatSelectModule} from '@angular/material/select';
     HighchartsChartModule,
     MatCardModule,
     MatSelectModule,
+    HttpClientModule,
+    TranslocoRootModule,
   ],
   providers: [UserService , PostService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslocoService } from '@ngneat/transloco';
 import { IPost } from '../interfaces/post.interface';
 import { IUser } from '../interfaces/user.interface';
 import { PostService } from '../services/posts.service';
@@ -16,9 +17,12 @@ export class LandingPageComponent implements OnInit {
   trendingIdeas: IPost[] = [];
   user: IUser | undefined;
 
+  currentLanguage = 'FR';
+
   constructor(private readonly router: Router,
     private readonly userService: UserService,
-    private readonly postService : PostService
+    private readonly postService : PostService,
+    private readonly translocoService: TranslocoService
     ) {
 
     this.postService.getTrending().then(res => {
@@ -67,6 +71,20 @@ export class LandingPageComponent implements OnInit {
     .then(() => {
       window.location.reload()
     });
+  }
+
+  toggleLanguage(){
+    if(this.currentLanguage === 'FR')
+    {
+      this.translocoService.setActiveLang('fr');
+      this.currentLanguage = 'EN';
+    }
+    else if(this.currentLanguage === 'EN')
+    {
+      this.translocoService.setActiveLang('en');
+      this.currentLanguage = 'FR';
+    }
+
   }
 
 }

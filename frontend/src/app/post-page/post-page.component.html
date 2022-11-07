@@ -12,22 +12,24 @@
       <div class="toolbar-item ti-right">{{user.drops}}</div>
     </div>
   </div>
-  <div class="toolbar-item ti-right" [ngClass]="{'highlight' : isChallenge}" (click)="navigateToChallenges()" >Challenges</div>
-  <div class="toolbar-item ti-right" [ngClass]="{'highlight' : !isChallenge}"  (click)="navigateToIdeas()">Ideas</div>
-  <div class="toolbar-item ti-right" (click)="logout()"><mat-icon>logout</mat-icon>Logout</div>
+  <div class="toolbar-item ti-right" [ngClass]="{'highlight' : isChallenge}" (click)="navigateToChallenges()" >{{'NAVBAR.CHALLENGES' | transloco}}</div>
+  <div class="toolbar-item ti-right" [ngClass]="{'highlight' : !isChallenge}"  (click)="navigateToIdeas()">{{'NAVBAR.IDEAS' | transloco}}</div>
+  <div class="toolbar-item ti-right" (click)="logout()"><mat-icon>logout</mat-icon>{{'NAVBAR.LOGOUT' | transloco}}</div>
+
+  <div class="toolbar-item translate ti-right" (click)="toggleLanguage()">{{currentLanguage}}</div>
 </mat-toolbar>
 
 <div class="container">
 
   <div class="make-post">
-    <div class="title">Make a post</div>
+    <div class="title">{{'MAKE_A_POST' | transloco}}</div>
     <div class="post-card">
       <app-post-card [user]="user" [isChallenge]="isChallenge" [trending]="trending"></app-post-card>
     </div>
   </div>
   <div class="trends">
-    <div class="title" *ngIf="isChallenge">Challenges on the Rise</div>
-    <div class="title" *ngIf="!isChallenge">Trending Ideas</div>
+    <div class="title" *ngIf="isChallenge">{{'CHALLENGES_ON_THE_RISE' | transloco}}</div>
+    <div class="title" *ngIf="!isChallenge">{{'TRENDING_IDEAS' | transloco}}</div>
 
     <div class="trending">
       <div class="trending-post" *ngFor="let post of trending">

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TranslocoService } from '@ngneat/transloco';
 import { IPost } from '../interfaces/post.interface';
 import { IUser } from '../interfaces/user.interface';
 import { PostService } from '../services/posts.service';
@@ -13,6 +14,7 @@ import { UserService } from '../services/user.service';
 export class PostPageComponent implements OnInit {
 
   @Input() isChallenge  = true;
+  currentLanguage = 'FR';
 
   user: IUser | undefined;
   trending: IPost[] = [];
@@ -21,7 +23,8 @@ export class PostPageComponent implements OnInit {
       private readonly userService: UserService,
       private readonly postService: PostService,
       private readonly route: ActivatedRoute,
-      private readonly router: Router
+      private readonly router: Router,
+      private readonly translocoService: TranslocoService
     ) {
       this.route.data.subscribe(result => this.isChallenge = result['isChallenge'])
   }
@@ -73,5 +76,19 @@ export class PostPageComponent implements OnInit {
     .then(() => {
       window.location.reload()
     });
+  }
+
+  toggleLanguage(){
+    if(this.currentLanguage === 'FR')
+    {
+      this.translocoService.setActiveLang('fr');
+      this.currentLanguage = 'EN';
+    }
+    else if(this.currentLanguage === 'EN')
+    {
+      this.translocoService.setActiveLang('en');
+      this.currentLanguage = 'FR';
+    }
+
   }
 }

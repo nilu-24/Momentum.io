@@ -1,0 +1,43 @@
+{
+  "LANGUAGE": "EN",
+  "MAIN_PAGE": {
+    "COLLABORATE": "Collaborate",
+    "DESIGN_TEXT": {
+      "T1": "Collaborate on",
+      "T2": "Ideas",
+      "T3": "and share the",
+      "T4": "Challenges",
+      "T5": "you face in your communities.",
+      "T6": "Momentum.io",
+      "T7": "serves in connecting you to the Sustainability Goals of the",
+      "T8": "United Nations."
+    },
+    "JOIN_FAMILY":"Join the Family!",
+    "WORLD_GLANCE": "The World at a Glance 🌎",
+    "DISCOVER": "Discover the challenges with the most momentum ⚡ all across the globe with our fully interactive map.",
+    "MAKE_IMPACT": "MAKE AN IMPACT",
+    "MAKE_IMPACT_D1" : "Share the challenges you face in your community or region OR if you have ideas on achieving social wellbeing. We value your ideas and momentum.io will work on them to make a better world.",
+    "MAKE_IMPACT_D2" : "Contribute towards better and sustainable future and help next generations live a better life.",
+    "DROP_D": "Earn drops for each post, comment you make and also on the momentum your post gets. We will donate $1 for every 10 points you redeem to a cause. Contribute | Earn Drops | Make Change",
+    "BRING_CHANGE": "You can bring a change. Make every moment count!",
+    "JOIN_NOW": "Join Us Now!",
+    "MADE_WITH_LOVE": "Made with ❤️ by Team Momentum."
+  },
+  "NAVBAR": {
+    "CHALLENGES": "Challenges",
+    "IDEAS": "Ideas",
+    "LOGOUT": "Logout"
+  },
+  "CHALLENGES_ON_THE_RISE": "Challenges on the Rise",
+  "TRENDING_IDEAS": "Trending Ideas",
+  "FACING_A_CHALLENGE": "Facing a Challenge?",
+  "HAVE_AN_IDEA": "Have an Idea?",
+  "MAKE_A_POST": "Make a Post",
+  "POST_FORM": {
+    "TITLE" : "Title",
+    "DESCRIPTION": "Description",
+    "TAGS": "Tags",
+    "COUNTRY": "Country",
+    "POST": "Post"
+  }
+}

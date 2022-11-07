@@ -10,7 +10,9 @@
   border: 2px solid white;
   padding: 8px;
   border-radius: 10px;
-  " class="toolbar-item" (click)="openLoginDialog()">Collaborate</div>
+  " class="toolbar-item" (click)="openLoginDialog()">{{'MAIN_PAGE.COLLABORATE' | transloco}}</div>
+
+  <div class="toolbar-item translate" (click)="toggleLanguage()">{{currentLanguage}}</div>
 </mat-toolbar>
 
 <img style= "height: 400px; width: 400px;
@@ -21,47 +23,47 @@ margin-right: auto;" src="../assets/world.png" class="banner" alt="main">
 <div class="container">
 
   <div class="main-description section">
-    Collaborate on
-    <div class="big-word">Ideas</div>
-    and share the
-    <div class="big-word">Challenges</div>
-    you face in your communities.
-    <div class="big-word">momentum</div>
-    serves in connecting you to the Sustainability Goals of the
-    <div class="big-word">United Nations 🇺🇳</div>
+    {{'MAIN_PAGE.DESIGN_TEXT.T1' | transloco}}
+    <div class="big-word">{{'MAIN_PAGE.DESIGN_TEXT.T2' | transloco}}</div>
+    {{'MAIN_PAGE.DESIGN_TEXT.T3' | transloco}}
+    <div class="big-word">{{'MAIN_PAGE.DESIGN_TEXT.T4' | transloco}}</div>
+    {{'MAIN_PAGE.DESIGN_TEXT.T5' | transloco}}
+    <div class="big-word">{{'MAIN_PAGE.DESIGN_TEXT.T6' | transloco}}</div>
+    {{'MAIN_PAGE.DESIGN_TEXT.T7' | transloco}}
+    <div class="big-word">{{'MAIN_PAGE.DESIGN_TEXT.T8' | transloco}}</div>
 
-    <button mat-button (click)="openLoginDialog()"> Join the family! </button>
+    <button mat-button (click)="openLoginDialog()">{{'MAIN_PAGE.JOIN_FAMILY' | transloco}}</button>
   </div>
 
 
-  <h1>The World At A Glance 🌎</h1>
-  <h4>Discover the challenges with the most momentum ⚡ all across the globe with our fully interactive map.</h4>
+  <h1>{{'MAIN_PAGE.WORLD_GLANCE' | transloco}}</h1>
+  <h4>{{'MAIN_PAGE.DISCOVER' | transloco}}</h4>
 
   <div class="map section">
     <map></map>
   </div>
 
   <div class="make-impact section">
-    <div class="title subsection-left">MAKE AN IMPACT</div>
+    <div class="title subsection-left">{{'MAIN_PAGE.MAKE_IMPACT' | transloco}}</div>
     <div class="description subsection-right">
-      Share the challenges you face in your community or region OR if you have ideas on achieving social wellbeing. We value your ideas and momentum.io will work on them to make a better world. <br><br>
-      Contribute towards better and sustainable future and help next generations live a better life.
+      {{'MAIN_PAGE.MAKE_IMPACT_D1' | transloco}}<br><br>
+      {{'MAIN_PAGE.MAKE_IMPACT_D2' | transloco}}
     </div>
   </div>
 
   <div class="drop-points section">
-    <div class="description subsection-left">Earn drops for each post, comment you make and also on the momentum your post gets. We will donate $1 for every 10 points you redeem to a cause. Contribute | Earn Drops | Make Change</div>
+    <div class="description subsection-left">{{'MAIN_PAGE.DROP_D' | transloco}}</div>
     <div class="title subsection-right">
       <img src="../../assets/tear.png" alt="" class="tear-drop">
     </div>
   </div>
 
 
-  <h3>You can bring a change. Make every moment count!</h3>
+  <h3>{{'MAIN_PAGE.BRING_CHANGE' | transloco}}</h3>
 
-  <button mat-button (click)="openLoginDialog()">Join Us Now!</button>
+  <button mat-button (click)="openLoginDialog()">{{'MAIN_PAGE.JOIN_NOW' | transloco}}</button>
 
-  <h4>Made with ❤️ by Team Momentum.</h4>
+  <h4>{{'MAIN_PAGE.MADE_WITH_LOVE' | transloco}}</h4>
   <br>
 
 </div>

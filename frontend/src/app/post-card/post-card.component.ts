@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TranslocoService } from '@ngneat/transloco';
 import { __importStar } from 'tslib';
 import { IPost } from '../interfaces/post.interface';
 import { IUser } from '../interfaces/user.interface';
@@ -16,10 +17,11 @@ export class PostCardComponent implements OnInit {
   @Input() isChallenge = false;
   @Input() trending : IPost[] = [];
   @Input() user: IUser | undefined;
+  currentLanguage = 'FR';
 
   postForm : FormGroup;
 
-  constructor(private fb : FormBuilder, private postService: PostService, private userService: UserService) {
+  constructor(private fb : FormBuilder, private postService: PostService, private userService: UserService, private readonly translocoService: TranslocoService) {
     this.postForm = this.fb.group({
       title: this.fb.control(''),
       description: this.fb.control(''),
@@ -72,6 +74,20 @@ export class PostCardComponent implements OnInit {
       image: [''],
       country: ['']
     })
+  }
+
+  toggleLanguage(){
+    if(this.currentLanguage === 'FR')
+    {
+      this.translocoService.setActiveLang('fr');
+      this.currentLanguage = 'EN';
+    }
+    else if(this.currentLanguage === 'EN')
+    {
+      this.translocoService.setActiveLang('en');
+      this.currentLanguage = 'FR';
+    }
+
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { TranslocoService } from '@ngneat/transloco';
 import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 
 @Component({
@@ -9,7 +10,9 @@ import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 })
 export class MainPageComponent{
 
-  constructor(public dialog: MatDialog) { }
+  currentLanguage = 'FR';
+
+  constructor(public dialog: MatDialog, private readonly translocoService: TranslocoService) { }
 
   openLoginDialog(): void {
     const dialogRef = this.dialog.open(LoginDialogComponent, {
@@ -20,5 +23,19 @@ export class MainPageComponent{
     dialogRef.afterClosed().subscribe(result => {
       console.log(result);
     });
+  }
+
+  toggleLanguage(){
+    if(this.currentLanguage === 'FR')
+    {
+      this.translocoService.setActiveLang('fr');
+      this.currentLanguage = 'EN';
+    }
+    else if(this.currentLanguage === 'EN')
+    {
+      this.translocoService.setActiveLang('en');
+      this.currentLanguage = 'FR';
+    }
+
   }
 }

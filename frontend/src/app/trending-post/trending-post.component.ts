@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslocoService } from '@ngneat/transloco';
 import { IPost } from '../interfaces/post.interface';
 import { CollabService } from '../services/collab.service';
 import { UserService } from '../services/user.service';
@@ -13,11 +14,13 @@ export class TrendingPostComponent implements OnInit {
 
   @Input() post: IPost | undefined;
   voted = false;
-  username = ''
+  username = '';
+  currentLanguage = 'FR';
 
   constructor(private readonly router: Router,
     private readonly collabService: CollabService,
-    private readonly userService: UserService) {
+    private readonly userService: UserService,
+    private readonly translocoService: TranslocoService) {
 
   }
 
@@ -53,6 +56,20 @@ export class TrendingPostComponent implements OnInit {
         this.voted = false;
       }
     }
+  }
+
+  toggleLanguage(){
+    if(this.currentLanguage === 'FR')
+    {
+      this.translocoService.setActiveLang('fr');
+      this.currentLanguage = 'EN';
+    }
+    else if(this.currentLanguage === 'EN')
+    {
+      this.translocoService.setActiveLang('en');
+      this.currentLanguage = 'FR';
+    }
+
   }
 
 }

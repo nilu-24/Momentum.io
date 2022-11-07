@@ -12,9 +12,11 @@
       <div class="toolbar-item ti-right">{{user.drops}}</div>
     </div>
   </div>
-  <div class="toolbar-item ti-right" (click)="navigateToChallenges()">Challenges</div>
-  <div class="toolbar-item ti-right" (click)="navigateToIdeas()">Ideas</div>
-  <div class="toolbar-item ti-right" (click)="logout()"><mat-icon>logout</mat-icon>Logout</div>
+  <div class="toolbar-item ti-right" (click)="navigateToChallenges()">{{'NAVBAR.CHALLENGES' | transloco}}</div>
+  <div class="toolbar-item ti-right" (click)="navigateToIdeas()">{{'NAVBAR.IDEAS' | transloco}}</div>
+  <div class="toolbar-item ti-right" (click)="logout()"><mat-icon>logout</mat-icon>{{'NAVBAR.LOGOUT' | transloco}}</div>
+
+  <div class="toolbar-item translate ti-right" (click)="toggleLanguage()">{{currentLanguage}}</div>
 </mat-toolbar>
 <div class="container">
   <div class="map">
@@ -23,20 +25,20 @@
 
   <div class="trends">
     <div class="trendingChallenges trend">
-      <div class="title">CHALLENGES ON THE RISE</div>
+      <div class="title">{{'CHALLENGES_ON_THE_RISE' | transloco}}</div>
       <div *ngFor="let challenge of trendingChallenges">
         <app-trending-card [post]="challenge"></app-trending-card>
       </div>
 
-      <button mat-button class="medium-button" (click)="navigateToChallenges()">Facing a Challenge?</button>
+      <button mat-button class="medium-button" (click)="navigateToChallenges()">{{'FACING_A_CHALLENGE' | transloco}}</button>
     </div>
 
     <div class="trendingIdeas trend">
-      <div class="title">Trending Ideas</div>
+      <div class="title">{{'TRENDING_IDEAS' | transloco}}</div>
       <div *ngFor="let idea of trendingIdeas">
         <app-trending-card [post]="idea"></app-trending-card>
       </div>
-      <button mat-button class="medium-button" (click)="navigateToIdeas()">Have an Idea?</button>
+      <button mat-button class="medium-button" (click)="navigateToIdeas()">{{'HAVE_AN_IDEA' | transloco}}</button>
     </div>
   </div>
 </div>

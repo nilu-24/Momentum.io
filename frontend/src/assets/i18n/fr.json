@@ -1,0 +1,43 @@
+{
+  "LANGUAGE": "EN",
+  "MAIN_PAGE": {
+    "COLLABORATE": "Collaborer",
+    "DESIGN_TEXT": {
+      "T1": "Collaborer sur",
+      "T2": "Idées",
+      "T3": "et partager le",
+      "T4": "Défis",
+      "T5": "que vous rencontrez dans vos communautés.",
+      "T6": "Momentum.io",
+      "T7": "sert à vous relier aux objectifs de durabilité de l'UE.",
+      "T8": "Nations Unies."
+    },
+    "JOIN_FAMILY":"Rejoignez la famille !",
+    "WORLD_GLANCE": "Le monde en un clin d'œil 🌎",
+    "DISCOVER": "Découvrez les défis ayant le plus d'élan ⚡ travers le monde grâce à notre carte entièrement interactive.",
+    "MAKE_IMPACT": "FAIRE UN IMPACT",
+    "MAKE_IMPACT_D1" : "Partagez les défis auxquels vous êtes confrontés dans votre communauté ou votre région OU si vous avez des idées pour atteindre le bien-être social. Nous apprécions vos idées et momentum.io y travaillera pour créer un monde meilleur.",
+    "MAKE_IMPACT_D2" : "Contribuer à un avenir meilleur et durable et aider les générations futures à vivre une vie meilleure.",
+    "DROP_D": "Gagnez des points pour chaque post, chaque commentaire que vous faites et aussi sur l'élan que votre post obtient. Nous ferons don d'un dollar à une cause pour chaque tranche de 10 points que vous échangez. Contribuer | Gagner des points | Faire bouger les choses",
+    "BRING_CHANGE": "Vous pouvez apporter un changement. Faites en sorte que chaque moment compte !",
+    "JOIN_NOW": "Rejoignez-nous maintenant !",
+    "MADE_WITH_LOVE": "Fait avec ❤️ par Team Momentum."
+  },
+  "NAVBAR": {
+    "CHALLENGES": "Défis",
+    "IDEAS": "Idées",
+    "LOGOUT": "Déconnexion"
+  },
+  "CHALLENGES_ON_THE_RISE": "Des défis de plus en plus nombreux",
+  "TRENDING_IDEAS": "Idées en vogue",
+  "FACING_A_CHALLENGE": "Un défi à relever ?",
+  "HAVE_AN_IDEA": "Vous avez une idée ?",
+  "MAKE_A_POST": "Faire un post",
+  "POST_FORM": {
+    "TITLE" : "Titre",
+    "DESCRIPTION": "Description",
+    "TAGS": "Tags",
+    "COUNTRY": "Pays",
+    "POST": "Poste"
+  }
+}
