@@ -23,14 +23,14 @@
           </div>
 
           <div class="select">
-            <mat-label>Select</mat-label>
-            <mat-select>
-              <mat-option [ngStyle]="{'background-color': tag.color}" *ngFor="let tag of un_tags" (value)="tag.id">
-                <div class="selected-option" [ngStyle]="{'background-color': tag.color}">
-                  {{tag.title}}
-                </div>
-              </mat-option>
-            </mat-select>
+            <mat-form-field>
+              <mat-label>Select UN Tag</mat-label>
+              <mat-select>
+                <mat-option [ngStyle]="{'background-color': tag.color}" *ngFor="let tag of un_tags" [value]="tag.id">
+                    {{tag.title}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
           </div>
         </div>
       </div>
@@ -45,14 +45,14 @@
           </div>
 
           <div class="select">
-            <mat-label>Select</mat-label>
-            <mat-select>
-              <mat-option [ngStyle]="{'background-color': tag.color}" *ngFor="let tag of un_tags" (value)="tag.id">
-                <div class="selected-option" [ngStyle]="{'background-color': tag.color}">
-                  {{tag.title}}
-                </div>
-              </mat-option>
-            </mat-select>
+            <mat-form-field>
+              <mat-label>Select UN Tag</mat-label>
+              <mat-select>
+                <mat-option [ngStyle]="{'background-color': tag.color}" *ngFor="let tag of un_tags" [value]="tag.id">
+                    {{tag.title}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
           </div>
         </div>
       </div>
