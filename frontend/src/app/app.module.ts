@@ -28,6 +28,8 @@ import { PostService } from './services/posts.service';
 import {MatSelectModule} from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslocoRootModule } from './transloco-root.module';
+import { ChartModule } from 'angular-highcharts'
+import { BarChartComponent } from './bar-chart/bar-chart.component';
 
 
 @NgModule({
@@ -43,6 +45,7 @@ import { TranslocoRootModule } from './transloco-root.module';
     PostCardComponent,
     CollabPageComponent,
     AdminPageComponent,
+    BarChartComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +63,7 @@ import { TranslocoRootModule } from './transloco-root.module';
     MatSelectModule,
     HttpClientModule,
     TranslocoRootModule,
+    ChartModule
   ],
   providers: [UserService , PostService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
