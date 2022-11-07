@@ -2,7 +2,7 @@
   <div class="toolbar-item logo-container">
     <img src="../assets/logo.png" class="logo" alt="logo">
   </div>
-  <div class="toolbar-item brand">
+  <div class="toolbar-item brand" (click)="navigateToHome()">
     momentum.io
   </div>
   <span class="example-spacer"></span>
@@ -23,7 +23,7 @@
 
   <div class="trends">
     <div class="trendingChallenges trend">
-      <div class="title">Trending Challenges</div>
+      <div class="title">CHALLENGES ON THE RISE</div>
       <div *ngFor="let challenge of trendingChallenges">
         <app-trending-card [post]="challenge"></app-trending-card>
       </div>

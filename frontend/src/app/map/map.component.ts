@@ -392,6 +392,4 @@ export class MapComponent {
       }
     ]
   };
-
-
 }

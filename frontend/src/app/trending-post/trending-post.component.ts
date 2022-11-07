@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { IPost } from '../interfaces/post.interface';
 import { CollabService } from '../services/collab.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-trending-post',
@@ -12,11 +13,22 @@ export class TrendingPostComponent implements OnInit {
 
   @Input() post: IPost | undefined;
   voted = false;
+  username = ''
 
   constructor(private readonly router: Router,
-    private readonly collabService: CollabService) { }
+    private readonly collabService: CollabService,
+    private readonly userService: UserService) {
+
+  }
 
   ngOnInit(): void {
+
+    if(this.post)
+    {
+      this.userService.getUserById(this.post.user).then(res => {
+        this.username = res.username
+      }
+    )};
   }
 
   collab(){

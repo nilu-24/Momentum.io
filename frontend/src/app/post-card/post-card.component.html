@@ -11,11 +11,11 @@
     <textarea name="desc" rows="5" placeholder="Description" formControlName="description"></textarea>
 
     <input type="text" placeholder="Tags (Upto 3)" class="tags" formControlName="tags">
-    <input type="text" placeholder="City" class="city" formControlName="city">
+    <input type="text" placeholder="Country" class="city" formControlName="country">
   </div>
 
   <div class="image-button">
-    <input type="file" class="image-input" formControlName="image">
+    <input placeholder="image" type="file" class="image-input" formControlName="image">
     <button mat-button class="medium-button" (click)="createNewPost()" [disabled]="postForm.invalid">POST</button>
   </div>
 </mat-card>

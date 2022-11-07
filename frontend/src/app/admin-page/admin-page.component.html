@@ -1,1 +1,61 @@
-<p>admin-page works!</p>
+<mat-toolbar>
+  <div class="toolbar-item logo-container">
+    <img src="../assets/logo.png" class="logo" alt="logo">
+  </div>
+  <div class="toolbar-item brand">
+    momentum.io
+  </div>
+  <span class="example-spacer"></span>
+  <div class="toolbar-item ti-right points">
+    <img class="tear-icon" src="../../assets/tear.png" alt="">
+  </div>
+  <div class="toolbar-item ti-right" (click)="logout()"><mat-icon>logout</mat-icon>Logout</div>
+</mat-toolbar>
+
+<div class="container">
+  <div class="trends">
+    <div class="trendingChallenges trend">
+      <div class="title">CHALLENGES ON THE RISE</div>
+      <div *ngFor="let challenge of trendingChallenges">
+        <div class="card">
+          <div class="trending-card">
+            <app-trending-card [post]="challenge"></app-trending-card>
+          </div>
+
+          <div class="select">
+            <mat-label>Select</mat-label>
+            <mat-select>
+              <mat-option [ngStyle]="{'background-color': tag.color}" *ngFor="let tag of un_tags" (value)="tag.id">
+                <div class="selected-option" [ngStyle]="{'background-color': tag.color}">
+                  {{tag.title}}
+                </div>
+              </mat-option>
+            </mat-select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="trendingIdeas trend">
+      <div class="title">Trending Ideas</div>
+      <div *ngFor="let idea of trendingIdeas">
+        <div class="card">
+          <div class="trending-card">
+            <app-trending-card [post]="idea"></app-trending-card>
+          </div>
+
+          <div class="select">
+            <mat-label>Select</mat-label>
+            <mat-select>
+              <mat-option [ngStyle]="{'background-color': tag.color}" *ngFor="let tag of un_tags" (value)="tag.id">
+                <div class="selected-option" [ngStyle]="{'background-color': tag.color}">
+                  {{tag.title}}
+                </div>
+              </mat-option>
+            </mat-select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

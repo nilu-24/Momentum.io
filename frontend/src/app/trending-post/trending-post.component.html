@@ -1,7 +1,7 @@
 <mat-card *ngIf="post">
-  <div class="username">{{ post.username }}</div>
+  <div class="username">~{{ username }}</div>
   <div class="image">
-    <img [attr.src]="post.imageurl" alt="post_image" />
+    <img [attr.src]="'../../assets/images/' + post.imageurl" alt="post_image" />
   </div>
   <div class="title">{{post.title}}</div>
   <div class="description">{{ post.description }}</div>

@@ -20,9 +20,21 @@ export class LandingPageComponent implements OnInit {
     private readonly userService: UserService,
     private readonly postService : PostService
     ) {
-    this.trendingChallenges = this.postService.getTrendingChallenges().splice(0, 3);
-    this.trendingIdeas = this.postService.getTrendingIdeas().splice(0, 3);
-    this.user = this.userService.getCurrentUser();
+
+    this.postService.getTrending().then(res => {
+
+      var sortedPosts = res.sort((a: IPost, b: IPost) => b.votes - a.votes);
+
+      this.trendingChallenges = sortedPosts.filter(res => res.flag == false).splice(0, 5);
+      this.trendingIdeas = sortedPosts.filter(res => res.flag == true).splice(0, 5);
+    });
+
+    let uid = sessionStorage.getItem("user");
+
+    if(uid == null)
+      uid = '';
+
+    this.userService.getUserById(parseInt(uid)).then(res => this.user = res);
   }
 
   ngOnInit(): void {
@@ -45,6 +57,13 @@ export class LandingPageComponent implements OnInit {
     sessionStorage.clear();
 
     this.router.navigate([''])
+    .then(() => {
+      window.location.reload()
+    });
+  }
+
+  navigateToHome(){
+    this.router.navigate(['app'])
     .then(() => {
       window.location.reload()
     });

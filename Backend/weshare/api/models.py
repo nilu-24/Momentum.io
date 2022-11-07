@@ -18,7 +18,8 @@ class Post(models.Model):
     country = models.CharField(max_length=50)
     flag = models.BooleanField(default=False)
     votes = models.IntegerField(default=0)
-    unTag = models.JSONField(default=dict())
+    un_tag = models.JSONField(default=dict())
+    imageurl = models.CharField(max_length=100)
 
 class PostTag(models.Model):
     tag = models.CharField(max_length=30)

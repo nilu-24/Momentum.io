@@ -1,6 +1,6 @@
 export interface IPost{
   id: number,
-  username: string,
+  user: number,
   title: string,
   description: string,
   tags: string,

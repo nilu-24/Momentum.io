@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, UntypedFormControl, Validators } from "@angular/forms";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { Router } from "@angular/router";
+import { IUser } from "../interfaces/user.interface";
 import { UserService } from "../services/user.service";
 
 @Component({
@@ -14,6 +15,8 @@ export class LoginDialogComponent implements OnInit{
 
   loginForm : FormGroup;
   registerForm : FormGroup;
+
+  users : IUser[] = [];
 
   constructor(
     private fb : FormBuilder,
@@ -72,16 +75,29 @@ export class LoginDialogComponent implements OnInit{
 
   login(): void {
 
-    const user = this.userService.verifyUser(this.loginForm.value.email, this.loginForm.value.password);
+    this.userService.getAllUsers().then(res => {
 
-    if(user){
-      sessionStorage.setItem("user", user.email);
+      var user = res.filter(res => res.email === this.loginForm.value.email && res.password === this.loginForm.value.password);
 
-      this.router.navigate(['app'])
-      .then(() => {
-        window.location.reload()
-      });
-    }
+      if(user[0].username == 'admin' && user[0].password == 'admin123')
+      {
+        sessionStorage.setItem("user", user[0].id.toString());
+
+        this.router.navigate(['admin'])
+        .then(() => window.location.reload())
+      }
+      else if(user)
+      {
+        sessionStorage.setItem("user", user[0].id.toString());
+
+        this.router.navigate(['app'])
+        .then(() => {
+          window.location.reload()
+        });
+      }
+    });
+
+
   }
 
   register(): void {

@@ -25,6 +25,7 @@ import { PostCardComponent } from './post-card/post-card.component';
 import { CollabPageComponent } from './collab-page/collab-page.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { PostService } from './services/posts.service';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { PostService } from './services/posts.service';
     MatIconModule,
     HighchartsChartModule,
     MatCardModule,
+    MatSelectModule,
   ],
   providers: [UserService , PostService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]

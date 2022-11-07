@@ -2,7 +2,7 @@
   <div class="toolbar-item logo-container">
     <img src="../assets/logo.png" class="logo" alt="logo" />
   </div>
-  <div class="toolbar-item brand">momentum.io</div>
+  <div class="toolbar-item brand" (click)="navigateToHome()">momentum.io</div>
   <span class="example-spacer"></span>
   <div class="toolbar-item ti-right points">
     <img class="tear-icon" src="../../assets/tear.png" alt="" />
@@ -28,12 +28,10 @@
         <div class="description">{{ post.description }}</div>
 
         <div class="tags">{{ post.tags }}</div>
-
-        <div class="country">{{ post.country }}</div>
       </div>
 
       <div class="post-image">
-        <img alt="post image" [attr.src]="post.imageurl" />
+        <img alt="post image" [attr.src]="'../../assets/images/' + post.imageurl" />
       </div>
     </mat-card>
   </div>
@@ -49,5 +47,6 @@
       />
       <button mat-button class="send-button" (click)="sendMessage()">Send</button>
     </div>
+    <div class="toxic" *ngIf="notToxic">{{toxicityMessage}}</div>
   </div>
 </div>

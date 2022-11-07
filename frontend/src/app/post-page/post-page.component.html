@@ -2,7 +2,7 @@
   <div class="toolbar-item logo-container">
     <img src="../assets/logo.png" class="logo" alt="logo">
   </div>
-  <div class="toolbar-item brand">
+  <div class="toolbar-item brand" (click)="navigateToHome()">
     momentum.io
   </div>
   <span class="example-spacer"></span>
@@ -22,7 +22,7 @@
   <div class="make-post">
     <div class="title">Make a post</div>
     <div class="post-card">
-      <app-post-card [isChallenge]="isChallenge"></app-post-card>
+      <app-post-card [user]="user" [isChallenge]="isChallenge" [trending]="trending"></app-post-card>
     </div>
   </div>
   <div class="trends">

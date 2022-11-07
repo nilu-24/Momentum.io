@@ -41,19 +41,35 @@ export class PostPageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    if(this.isChallenge){
-      this.trending =  this.postService.getTrendingChallenges();
-    }
-    else if(!this.isChallenge) {
-      this.trending = this.postService.getTrendingIdeas();
-    }
-    this.user = this.userService.getCurrentUser();
+    this.postService.getTrending().then(res => {
+
+      var sortedPosts = res.sort((a: IPost, b: IPost) => b.votes - a.votes);
+
+      if(this.isChallenge)
+        this.trending = sortedPosts.filter(res => res.flag == false);
+      else if(!this.isChallenge)
+        this.trending = sortedPosts.filter(res => res.flag == true);
+    });
+
+    let uid = sessionStorage.getItem("user");
+
+    if(uid == null)
+      uid = '';
+
+    this.userService.getUserById(parseInt(uid)).then(res => this.user = res);
   }
 
   logout(){
     sessionStorage.clear();
 
     this.router.navigate([''])
+    .then(() => {
+      window.location.reload()
+    });
+  }
+
+  navigateToHome(){
+    this.router.navigate(['app'])
     .then(() => {
       window.location.reload()
     });
