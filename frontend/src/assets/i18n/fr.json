@@ -3,25 +3,25 @@
   "MAIN_PAGE": {
     "COLLABORATE": "Collaborer",
     "DESIGN_TEXT": {
-      "T1": "Collaborer sur",
+      "T1": "Collaborer sur des",
       "T2": "Idées",
-      "T3": "et partager le",
+      "T3": "et partager les",
       "T4": "Défis",
-      "T5": "que vous rencontrez dans vos communautés.",
+      "T5": "que tu rencontres dans tes communautés.",
       "T6": "Momentum.io",
-      "T7": "sert à vous relier aux objectifs de durabilité de l'UE.",
+      "T7": "sert à te relier aux objectifs de durabilité des",
       "T8": "Nations Unies."
     },
-    "JOIN_FAMILY":"Rejoignez la famille !",
+    "JOIN_FAMILY":"Rejoins la famille !",
     "WORLD_GLANCE": "Le monde en un clin d'œil 🌎",
-    "DISCOVER": "Découvrez les défis ayant le plus d'élan ⚡ travers le monde grâce à notre carte entièrement interactive.",
-    "MAKE_IMPACT": "FAIRE UN IMPACT",
-    "MAKE_IMPACT_D1" : "Partagez les défis auxquels vous êtes confrontés dans votre communauté ou votre région OU si vous avez des idées pour atteindre le bien-être social. Nous apprécions vos idées et momentum.io y travaillera pour créer un monde meilleur.",
+    "DISCOVER": "Découvre les défis ayant le plus de momentum ⚡ à travers le monde grâce à notre carte entièrement interactive.",
+    "MAKE_IMPACT": "AVOIR UN IMPACT",
+    "MAKE_IMPACT_D1" : "Partage les défis auxquels tu es confronté dans ta communauté ou ta région OU si tu as des idées pour participer au bien-être social. Nous apprécions tes idées et momentum.io y travaillera pour créer un monde meilleur.",
     "MAKE_IMPACT_D2" : "Contribuer à un avenir meilleur et durable et aider les générations futures à vivre une vie meilleure.",
-    "DROP_D": "Gagnez des points pour chaque post, chaque commentaire que vous faites et aussi sur l'élan que votre post obtient. Nous ferons don d'un dollar à une cause pour chaque tranche de 10 points que vous échangez. Contribuer | Gagner des points | Faire bouger les choses",
-    "BRING_CHANGE": "Vous pouvez apporter un changement. Faites en sorte que chaque moment compte !",
-    "JOIN_NOW": "Rejoignez-nous maintenant !",
-    "MADE_WITH_LOVE": "Fait avec ❤️ par Team Momentum."
+    "DROP_D": "Gagne des points pour chaque post, chaque commentaire que tu laisses et sur le momentum que ton post obtient. Nous ferons don d'un dollar à une cause pour chaque tranche de 10 points que tu échanges. Contribuer | Gagner des points | Faire bouger les choses",
+    "BRING_CHANGE": "Tu peux apporter un changement. Faites en sorte que chaque moment compte !",
+    "JOIN_NOW": "Rejoins-nous maintenant !",
+    "MADE_WITH_LOVE": "Fait avec ❤️ par  laTeam Momentum."
   },
   "NAVBAR": {
     "CHALLENGES": "Défis",
@@ -38,6 +38,6 @@
     "DESCRIPTION": "Description",
     "TAGS": "Tags",
     "COUNTRY": "Pays",
-    "POST": "Poste"
+    "POST": "Post"
   }
 }
